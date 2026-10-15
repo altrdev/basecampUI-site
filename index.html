@@ -1,57 +1,148 @@
 <!doctype html>
-<html lang="it">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Basecamp UI</title>
-<meta name="description" content="Una dashboard di casa per Home Assistant, senza Lovelace.">
-<style>
-  :root{--bg:#131417;--card:#1C1D22;--line:#2A2C33;--text:#EDEBE6;--muted:#A3A29C;--amber:#E8A33D;--blue:#6EA8E0;--green:#8CC79A}
-  *{box-sizing:border-box}
-  body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 "IBM Plex Sans",system-ui,sans-serif}
-  main{max-width:880px;margin:0 auto;padding:4rem 16px}
-  h1{font:600 2.6rem/1.1 Sora,system-ui,sans-serif;margin:0 0 .5rem}
-  h2{font:600 1.2rem Sora,system-ui,sans-serif;margin:3rem 0 1rem}
-  .lead{color:var(--muted);font-size:1.15rem;max-width:36rem}
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:1.1rem 1.25rem}
-  .card h3{margin:0 0 .3rem;font-size:1rem;color:var(--amber)}
-  .card p{margin:0;color:var(--muted);font-size:.95rem}
-  a{color:var(--blue)}
-  footer{margin-top:4rem;color:var(--muted);font-size:.9rem}
-</style>
+<title>Basecamp UI — Your home, at a glance</title>
+<meta name="description" content="Basecamp is a custom interface for Home Assistant, designed for the wall tablet and just as at home on your phone.">
+<meta name="theme-color" content="#000000">
+<meta property="og:title" content="Basecamp UI">
+<meta property="og:description" content="Your home. At a glance. A custom interface for Home Assistant.">
+<meta property="og:image" content="assets/screens/home-tablet.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Sora:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-<main>
-  <h1>Basecamp UI</h1>
-  <p class="lead">Una dashboard di casa per Home Assistant, senza Lovelace. HTML, CSS e JavaScript vanilla, pensata per il tablet a muro.</p>
 
-  <h2>Principi</h2>
-  <div class="grid">
-    <div class="card"><h3>Nessun build step</h3><p>Un web component registrato come <code>panel_custom</code>, senza framework.</p></div>
-    <div class="card"><h3>Costruita dai registri</h3><p>Aree, dispositivi ed etichette di HA definiscono la UI; la configurazione dice solo il resto.</p></div>
-    <div class="card"><h3>Sola lettura di default</h3><p>Comandi in un elenco chiuso; le azioni delicate chiedono pressione prolungata o codice.</p></div>
-    <div class="card"><h3>Tablet prima di tutto</h3><p>Layout 1280×800, tema scuro, numeri grandi, target touch generosi.</p></div>
+<header class="nav"><div class="nav-in">
+  <a class="brand" href="#top">Basecamp</a>
+  <ul>
+    <li><a href="#overview" data-i18n="nav.overview">Overview</a></li>
+    <li><a href="#rooms" data-i18n="nav.rooms">Rooms</a></li>
+    <li><a href="#energy" data-i18n="nav.energy">Energy</a></li>
+    <li><a href="#security" data-i18n="nav.security">Security</a></li>
+    <li><a href="#inside" data-i18n="nav.inside">Inside</a></li>
+  </ul>
+  <div class="lang" role="group" aria-label="Language">
+    <button data-lang="en" aria-pressed="true">EN</button>
+    <button data-lang="it" aria-pressed="false">IT</button>
   </div>
+</div></header>
 
-  <h2>Cosa fa</h2>
-  <div class="grid">
-    <div class="card"><h3>Casa</h3><p>Zone, luci, tapparelle, clima e qualità dell'aria.</p></div>
-    <div class="card"><h3>Energia e meteo</h3><p>Flussi solari, storico, bolletta stimata, stazione meteo.</p></div>
-    <div class="card"><h3>Sicurezza</h3><p>Allarme, telecamere, accessi e citofono.</p></div>
-    <div class="card"><h3>Funzioni</h3><p>Robot, auto elettrica, musica, elettrodomestici, rack e storico.</p></div>
-  </div>
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow rv" data-i18n="hero.eyebrow">Basecamp UI</p>
+      <h1 class="rv" data-i18n="hero.title">Your home.<br><span class="grad">At a glance.</span></h1>
+      <p class="lead rv" data-i18n="hero.lead">A custom interface for Home Assistant. Designed for the tablet on your wall, and just as at home on your phone.</p>
+      <div class="shot tablet rv"><img src="assets/screens/home-tablet.webp" width="1920" height="1200" data-i18n-alt="alt.home" alt="Basecamp home screen on a wall tablet"></div>
+    </div>
+  </section>
 
-  <h2>Documentazione</h2>
-  <p>
-    <a href="docs/overview.md">Panoramica</a> ·
-    <a href="docs/features.md">Funzionalità</a> ·
-    <a href="docs/architecture.md">Architettura</a> ·
-    <a href="docs/installation.md">Installazione</a> ·
-    <a href="docs/customization.md">Personalizzazione</a>
-  </p>
+  <section id="overview" class="statement">
+    <div class="wrap">
+      <h2 class="rv" data-i18n="overview.title">Everything that matters.<br>Nothing that doesn’t.</h2>
+      <p class="lead rv" data-i18n="overview.lead">Weather, energy, rooms, security and access on one calm screen you can read from across the room. Big numbers, soft colour, zero clutter.</p>
+    </div>
+  </section>
 
-  <footer>Progetto personale in sviluppo attivo. Il codice è in un repository privato.</footer>
+  <section id="rooms" class="dark2 feature">
+    <div class="pair">
+      <div class="copy rv">
+        <p class="eyebrow" data-i18n="rooms.eyebrow">Rooms</p>
+        <h2 data-i18n="rooms.title">Every room,<br>one tap away.</h2>
+        <p class="lead" data-i18n="rooms.lead">Each zone shows temperature, humidity, lights and open windows at a glance. Tap in for climate, dimmers and air quality, with controls made for real fingers.</p>
+      </div>
+      <div class="shot panel rv"><img loading="lazy" src="assets/screens/zone.webp" width="1160" height="1600" data-i18n-alt="alt.zone" alt="Living room panel with climate and lights"></div>
+    </div>
+  </section>
+
+  <section id="energy" class="feature">
+    <div class="pair rev">
+      <div class="copy rv">
+        <p class="eyebrow" data-i18n="energy.eyebrow">Energy</p>
+        <h2 data-i18n="energy.title">Watch the sun do the work.</h2>
+        <p class="lead" data-i18n="energy.lead">Live flows between solar, grid and home. Hour-by-hour power, self-sufficiency and tomorrow’s forecast. Your energy story in one picture.</p>
+      </div>
+      <div class="shot panel rv"><img loading="lazy" src="assets/screens/energy.webp" width="1160" height="1600" data-i18n-alt="alt.energy" alt="Energy flows between solar, grid and home"></div>
+    </div>
+  </section>
+
+  <section id="weather" class="dark2 feature">
+    <div class="pair">
+      <div class="copy rv">
+        <p class="eyebrow" data-i18n="weather.eyebrow">Weather</p>
+        <h2 data-i18n="weather.title">Weather from your own backyard.</h2>
+        <p class="lead" data-i18n="weather.lead">Readings from your station, the last 24 hours and the next 24 on a single line. Wind, rain, humidity and pressure, beautifully quiet.</p>
+      </div>
+      <div class="shot panel rv"><img loading="lazy" src="assets/screens/weather.webp" width="1160" height="1600" data-i18n-alt="alt.weather" alt="Weather panel with 24-hour temperature chart"></div>
+    </div>
+  </section>
+
+  <section id="security" class="feature">
+    <div class="pair rev">
+      <div class="copy rv">
+        <p class="eyebrow" data-i18n="security.eyebrow">Security</p>
+        <h2 data-i18n="security.title">Safe by design.</h2>
+        <p class="lead" data-i18n="security.lead">Doors, windows, alarm and who’s home. Risky actions need a deliberate press and critical ones a code, so a stray touch never opens the gate.</p>
+      </div>
+      <div class="shot panel rv"><img loading="lazy" src="assets/screens/security.webp" width="1160" height="880" data-i18n-alt="alt.security" alt="Security panel with doors, windows and people"></div>
+    </div>
+  </section>
+
+  <section class="dark2 feature">
+    <div class="pair">
+      <div class="copy rv">
+        <p class="eyebrow" data-i18n="covers.eyebrow">Shutters &amp; awnings</p>
+        <h2 data-i18n="covers.title">Light, exactly<br>how you like it.</h2>
+        <p class="lead" data-i18n="covers.lead">Every shutter and awning in one place, with presets that take a single tap. Sand-coloured sliders that feel like the real thing.</p>
+      </div>
+      <div class="shot panel rv"><img loading="lazy" src="assets/screens/covers.webp" width="1160" height="960" data-i18n-alt="alt.covers" alt="Shutters and awnings with presets"></div>
+    </div>
+  </section>
+
+  <section class="feature">
+    <div class="wrap">
+      <p class="eyebrow rv" data-i18n="phone.eyebrow">Everywhere</p>
+      <h2 class="rv" data-i18n="phone.title">Same home.<br>Pocket size.</h2>
+      <p class="lead rv" data-i18n="phone.lead">The layout reflows for phones and foldables without losing a single control. Open it from the Home Assistant app and you are home.</p>
+      <div class="phones">
+        <div class="phone rv"><img loading="lazy" src="assets/screens/home-phone.webp" width="824" height="1740" data-i18n-alt="alt.p1" alt="Home screen on a phone"></div>
+        <div class="phone rv"><img loading="lazy" src="assets/screens/zone-phone.webp" width="824" height="1740" data-i18n-alt="alt.p2" alt="Room panel on a phone"></div>
+        <div class="phone rv"><img loading="lazy" src="assets/screens/energy-phone.webp" width="824" height="1740" data-i18n-alt="alt.p3" alt="Energy panel on a phone"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="inside" class="dark2">
+    <div class="wrap">
+      <p class="eyebrow rv" data-i18n="inside.eyebrow">Inside</p>
+      <h2 class="rv" data-i18n="inside.title">Simple on the surface.<br>Rigorous underneath.</h2>
+      <div class="cards">
+        <article class="card rv"><span class="k" data-i18n="card1.k">Zero build</span><h3 data-i18n="card1.t">Vanilla, by choice.</h3><p data-i18n="card1.p">Plain JavaScript and web components. No framework, no bundler, no waiting.</p></article>
+        <article class="card rv"><span class="k" data-i18n="card2.k">Zero wiring</span><h3 data-i18n="card2.t">Built from your home.</h3><p data-i18n="card2.p">Rooms, devices and labels come straight from Home Assistant’s registries. Nothing is hard-wired by hand.</p></article>
+        <article class="card rv"><span class="k" data-i18n="card3.k">Safe</span><h3 data-i18n="card3.t">Read-only by default.</h3><p data-i18n="card3.p">The interface can only call a short, explicit list of services. Sensitive ones demand a long press or a code.</p></article>
+        <article class="card rv"><span class="k" data-i18n="card4.k">Tablet first</span><h3 data-i18n="card4.t">Made for the wall.</h3><p data-i18n="card4.p">Designed for 1280×800 wall tablets, with generous touch targets and a dark, glare-free palette.</p></article>
+        <article class="card rv"><span class="k" data-i18n="card5.k">Tested</span><h3 data-i18n="card5.t">Logic you can trust.</h3><p data-i18n="card5.p">Billing, schedules, alerts and ventilation live in pure modules, covered by tests that need no browser.</p></article>
+        <article class="card rv"><span class="k" data-i18n="card6.k">Private</span><h3 data-i18n="card6.t">Local, always.</h3><p data-i18n="card6.p">No cloud and no token in the code. It runs inside your own Home Assistant, on your own network.</p></article>
+      </div>
+      <div class="stats">
+        <div class="stat rv"><b>0</b><span data-i18n="stat1">build steps</span></div>
+        <div class="stat rv"><b>0</b><span data-i18n="stat2">framework dependencies</span></div>
+        <div class="stat rv"><b>1280×800</b><span data-i18n="stat3">wall-tablet layout</span></div>
+        <div class="stat rv"><b>44 px</b><span data-i18n="stat4">touch targets, minimum</span></div>
+      </div>
+    </div>
+  </section>
 </main>
+
+<footer>
+  <p data-i18n="foot.1">Screens show a fictional demo home, rendered by the real interface with sample data.</p>
+  <p data-i18n="foot.2">Basecamp is a personal project, built for one very specific home.</p>
+</footer>
+
+<script src="assets/app.js"></script>
 </body>
 </html>
