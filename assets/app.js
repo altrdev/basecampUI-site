@@ -73,7 +73,7 @@ const I18N = {
     "card1.k": "Zero build", "card1.t": "Vanilla, per scelta.", "card1.p": "JavaScript puro e web component. Nessun framework, nessun bundler, nessuna attesa.",
     "card2.k": "Zero cablaggi", "card2.t": "Costruita dalla tua casa.", "card2.p": "Stanze, dispositivi ed etichette arrivano direttamente dai registri di Home Assistant. Niente è cablato a mano.",
     "card3.k": "Sicura", "card3.t": "Sola lettura di default.", "card3.p": "L’interfaccia può chiamare solo un breve elenco esplicito di servizi. Quelli delicati chiedono una pressione prolungata o un codice.",
-    "card4.k": "Prima il tablet", "card4.t": "Nata per il tablet a muro.", "card4.p": "Pensata per tablet a muro 1280×800, con target touch generosi e una palette scura, senza riflessi.",
+    "card4.k": "Prima il tablet", "card4.t": "Pensata per stare a parete.", "card4.p": "Pensata per tablet a muro 1280×800, con target touch generosi e una palette scura, senza riflessi.",
     "card5.k": "Testata", "card5.t": "Una logica affidabile.", "card5.p": "Bollette, programmazioni, avvisi e ventilazione vivono in moduli puri, coperti da test che non richiedono un browser.",
     "card6.k": "Privata", "card6.t": "Locale, sempre.", "card6.p": "Nessun cloud e nessun token nel codice. Gira dentro il tuo Home Assistant, sulla tua rete.",
     "stat1": "passaggi di build", "stat2": "dipendenze da framework", "stat3": "layout per tablet a muro", "stat4": "target touch, minimo",
