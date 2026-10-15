@@ -3,14 +3,55 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>basecampUI</title>
+<title>Basecamp UI</title>
+<meta name="description" content="Una dashboard di casa per Home Assistant, senza Lovelace.">
 <style>
-  body{font-family:system-ui,sans-serif;max-width:720px;margin:4rem auto;padding:0 1rem;line-height:1.6}
+  :root{--bg:#131417;--card:#1C1D22;--line:#2A2C33;--text:#EDEBE6;--muted:#A3A29C;--amber:#E8A33D;--blue:#6EA8E0;--green:#8CC79A}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 "IBM Plex Sans",system-ui,sans-serif}
+  main{max-width:880px;margin:0 auto;padding:4rem 16px}
+  h1{font:600 2.6rem/1.1 Sora,system-ui,sans-serif;margin:0 0 .5rem}
+  h2{font:600 1.2rem Sora,system-ui,sans-serif;margin:3rem 0 1rem}
+  .lead{color:var(--muted);font-size:1.15rem;max-width:36rem}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:1.1rem 1.25rem}
+  .card h3{margin:0 0 .3rem;font-size:1rem;color:var(--amber)}
+  .card p{margin:0;color:var(--muted);font-size:.95rem}
+  a{color:var(--blue)}
+  footer{margin-top:4rem;color:var(--muted);font-size:.9rem}
 </style>
 </head>
 <body>
-  <h1>basecampUI</h1>
-  <p>Un'interfaccia custom per Home Assistant.</p>
-  <p><a href="docs/overview.md">Panoramica</a> · <a href="docs/installation.md">Installazione</a></p>
+<main>
+  <h1>Basecamp UI</h1>
+  <p class="lead">Una dashboard di casa per Home Assistant, senza Lovelace. HTML, CSS e JavaScript vanilla, pensata per il tablet a muro.</p>
+
+  <h2>Principi</h2>
+  <div class="grid">
+    <div class="card"><h3>Nessun build step</h3><p>Un web component registrato come <code>panel_custom</code>, senza framework.</p></div>
+    <div class="card"><h3>Costruita dai registri</h3><p>Aree, dispositivi ed etichette di HA definiscono la UI; la configurazione dice solo il resto.</p></div>
+    <div class="card"><h3>Sola lettura di default</h3><p>Comandi in un elenco chiuso; le azioni delicate chiedono pressione prolungata o codice.</p></div>
+    <div class="card"><h3>Tablet prima di tutto</h3><p>Layout 1280×800, tema scuro, numeri grandi, target touch generosi.</p></div>
+  </div>
+
+  <h2>Cosa fa</h2>
+  <div class="grid">
+    <div class="card"><h3>Casa</h3><p>Zone, luci, tapparelle, clima e qualità dell'aria.</p></div>
+    <div class="card"><h3>Energia e meteo</h3><p>Flussi solari, storico, bolletta stimata, stazione meteo.</p></div>
+    <div class="card"><h3>Sicurezza</h3><p>Allarme, telecamere, accessi e citofono.</p></div>
+    <div class="card"><h3>Funzioni</h3><p>Robot, auto elettrica, musica, elettrodomestici, rack e storico.</p></div>
+  </div>
+
+  <h2>Documentazione</h2>
+  <p>
+    <a href="docs/overview.md">Panoramica</a> ·
+    <a href="docs/features.md">Funzionalità</a> ·
+    <a href="docs/architecture.md">Architettura</a> ·
+    <a href="docs/installation.md">Installazione</a> ·
+    <a href="docs/customization.md">Personalizzazione</a>
+  </p>
+
+  <footer>Progetto personale in sviluppo attivo. Il codice è in un repository privato.</footer>
+</main>
 </body>
 </html>
