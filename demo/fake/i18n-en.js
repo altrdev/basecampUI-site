@@ -92,17 +92,50 @@ export function translate(text) {
 }
 
 const seen = new WeakMap();
+const observed = new WeakSet();
+
+function translateText(node) {
+  if (node.parentElement?.closest('style,script')) return;
+  const rec = seen.get(node);
+  if (rec && node.nodeValue === rec.out) return;
+  const out = translate(node.nodeValue);
+  seen.set(node, { out });
+  if (out !== node.nodeValue) node.nodeValue = out;
+}
+
 function walk(root) {
+  observe(root);
   const tw = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
-  for (let n = tw.nextNode(); n; n = tw.nextNode()) {
-    if (n.parentElement?.closest('style,script')) continue;
-    const rec = seen.get(n);
-    if (rec && n.nodeValue === rec.out) continue;
-    const out = translate(n.nodeValue);
-    seen.set(n, { out });
-    if (out !== n.nodeValue) n.nodeValue = out;
-  }
+  for (let n = tw.nextNode(); n; n = tw.nextNode()) translateText(n);
   for (const el of root.querySelectorAll('*')) if (el.shadowRoot) walk(el.shadowRoot);
 }
+
+function observe(root) {
+  if (observed.has(root)) return;
+  observed.add(root);
+  new MutationObserver((mutations) => {
+    for (const m of mutations) {
+      if (m.type === 'characterData') translateText(m.target);
+      for (const n of m.addedNodes) {
+        if (n.nodeType === 3) translateText(n);
+        else if (n.nodeType === 1) {
+          const tw = document.createTreeWalker(n, NodeFilter.SHOW_TEXT);
+          for (let t = tw.nextNode(); t; t = tw.nextNode()) translateText(t);
+          if (n.shadowRoot) walk(n.shadowRoot);
+          for (const el of n.querySelectorAll('*')) if (el.shadowRoot) walk(el.shadowRoot);
+        }
+      }
+    }
+  }).observe(root, { childList: true, subtree: true, characterData: true });
+}
+
+const attachShadow = Element.prototype.attachShadow;
+Element.prototype.attachShadow = function (init) {
+  const root = attachShadow.call(this, init);
+  observe(root);
+  return root;
+};
+
 window.__translate = () => walk(document);
-setInterval(window.__translate, 120);
+document.addEventListener('DOMContentLoaded', window.__translate);
+setInterval(window.__translate, 1000);
