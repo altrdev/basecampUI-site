@@ -60,7 +60,7 @@ const I18N = {
     "weather.title": "Il meteo del tuo giardino.",
     "weather.lead": "Le misure della tua stazione, le ultime 24 ore e le prossime 24 su un’unica linea. Vento, pioggia, umidità e pressione, in silenzio e con eleganza.",
     "security.eyebrow": "Sicurezza",
-    "security.title": "Pensata per la tua sicurezza.",
+    "security.title": "Sicura, senza pensieri.",
     "security.lead": "Porte, finestre, allarme e chi è in casa. Le azioni rischiose richiedono una pressione voluta e quelle critiche un codice: un tocco involontario non apre mai il cancello.",
     "covers.eyebrow": "Tapparelle e tende",
     "covers.title": "La luce, esattamente<br>come ti piace.",
