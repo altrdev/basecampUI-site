@@ -18,7 +18,7 @@ const I18N = {
     "appl.eyebrow": "Appliances", "appl.title": "Laundry day,<br>handled.", "appl.lead": "Progress, time left and programs for dishwasher, washer and dryer, with the right safeguards on start and stop.",
     "alt.bill": "Monthly bill estimate compared with a fixed-rate tariff", "alt.intercom": "Intercom panel with live video and recent calls", "alt.robot": "Robot vacuum panel with the cleaning map", "alt.vmc": "Ventilation panel with the heat-recovery diagram", "alt.music": "Music panel with now playing and queue", "alt.appl": "Dishwasher, washer and dryer with progress", "nav.energy": "Energy", "nav.security": "Security", 
     "hero.eyebrow": "Basecamp UI",
-    "hero.title": "Your home.<br><span class=\"grad\">At a glance.</span>",
+    "hero.title": "Home.<br><span class=\"grad\">At a glance.</span>",
     "hero.lead": "A custom interface for Home Assistant. Designed for the tablet on your wall, and just as at home on your phone.",
     "overview.title": "Everything that matters.<br>Nothing that doesn’t.",
     "overview.lead": "Weather, energy, rooms, security and access on one calm screen you can read from across the room. Big numbers, soft colour, zero clutter.",
@@ -127,7 +127,7 @@ function apply(lang) {
   document.querySelectorAll('img[data-img]').forEach((el) => { const s = `assets/screens/${lang}/${el.dataset.img}.webp`; if (!el.src.endsWith(s)) el.src = s; });
   document.querySelectorAll('[data-i18n-alt]').forEach((el) => { const v = dict[el.dataset.i18nAlt]; if (v != null) el.alt = v; });
   document.querySelectorAll('.lang button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.lang === lang)));
-  document.title = lang === 'it' ? 'Basecamp UI — La tua casa, con un’occhiata' : 'Basecamp UI — Your home, at a glance';
+  document.title = lang === 'it' ? 'Basecamp UI — La tua casa, con un’occhiata' : 'Basecamp UI — Home, at a glance';
   try { localStorage.setItem(KEY, lang); } catch {}
 }
 const demoUrl = (embed) => `demo/?${embed ? 'embed&' : ''}lang=${document.documentElement.lang}`;
