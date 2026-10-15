@@ -1,6 +1,12 @@
 const I18N = {
   en: {
     "nav.overview": "Overview",
+    "nav.more": "And more", "nav.rooms": "Rooms",
+    "energy.lead": "Live flows between solar, grid and home, hour-by-hour power, and a bill estimate you can compare with a fixed-rate offer.",
+    "energy.cap1": "Live flows, hourly power and tomorrow’s forecast.", "energy.cap2": "Month so far, forecast and a fixed-rate comparison.",
+    "security.cap1": "Live cameras, doors, windows and who’s home.", "security.cap2": "Live video, two-way talk and a photo of every call.",
+    "more.eyebrow": "And more", "more.title": "A home’s worth of detail.",
+    "alt.home": "Basecamp home screen on a wall tablet", "alt.p1": "Home screen on a phone", "alt.p2": "Room panel on a phone", "alt.p3": "Energy panel on a phone",
     "nav.inside": "Under the hood",
     "bill.eyebrow": "Bills", "bill.title": "Know the bill<br>before it arrives.", "bill.lead": "Your month so far, a forecast, and a side-by-side with a fixed-rate offer. See at a glance whether an indexed tariff is really worth it.",
     "intercom.eyebrow": "Intercom", "intercom.title": "Answer the door.<br>From anywhere.", "intercom.lead": "Live video, two-way talk and the gate release in one place, with a photo of every call so you never miss a visitor.",
@@ -8,8 +14,7 @@ const I18N = {
     "vmc.eyebrow": "Ventilation", "vmc.title": "Fresh air, always.", "vmc.lead": "Watch the heat-recovery unit at work: temperatures, flows and filters at a glance, with boost and bypass one tap away.",
     "music.eyebrow": "Music", "music.title": "Every room has<br>a soundtrack.", "music.lead": "Control every speaker, group rooms together, browse your library and queue what’s next. Powered by Music Assistant.",
     "appl.eyebrow": "Appliances", "appl.title": "Laundry day,<br>handled.", "appl.lead": "Progress, time left and programs for dishwasher, washer and dryer, with the right safeguards on start and stop.",
-    "alt.bill": "Monthly bill estimate compared with a fixed-rate tariff", "alt.intercom": "Intercom panel with live video and recent calls", "alt.robot": "Robot vacuum panel with the cleaning map", "alt.vmc": "Ventilation panel with the heat-recovery diagram", "alt.music": "Music panel with now playing and queue", "alt.appl": "Dishwasher, washer and dryer with progress",
- "nav.rooms": "Rooms", "nav.energy": "Energy", "nav.security": "Security", 
+    "alt.bill": "Monthly bill estimate compared with a fixed-rate tariff", "alt.intercom": "Intercom panel with live video and recent calls", "alt.robot": "Robot vacuum panel with the cleaning map", "alt.vmc": "Ventilation panel with the heat-recovery diagram", "alt.music": "Music panel with now playing and queue", "alt.appl": "Dishwasher, washer and dryer with progress", "nav.energy": "Energy", "nav.security": "Security", 
     "hero.eyebrow": "Basecamp UI",
     "hero.title": "Your home.<br><span class=\"grad\">At a glance.</span>",
     "hero.lead": "A custom interface for Home Assistant. Designed for the tablet on your wall, and just as at home on your phone.",
@@ -20,7 +25,6 @@ const I18N = {
     "rooms.lead": "Each zone shows temperature, humidity, lights and open windows at a glance. Tap in for climate, dimmers and air quality, with controls made for real fingers.",
     "energy.eyebrow": "Energy",
     "energy.title": "Watch the sun do the work.",
-    "energy.lead": "Live flows between solar, grid and home. Hour-by-hour power, self-sufficiency and tomorrow’s forecast. Your energy story in one picture.",
     "weather.eyebrow": "Weather",
     "weather.title": "Weather from your own backyard.",
     "weather.lead": "Readings from your station, the last 24 hours and the next 24 on a single line. Wind, rain, humidity and pressure, beautifully quiet.",
@@ -44,16 +48,20 @@ const I18N = {
     "stat1": "build steps", "stat2": "framework dependencies", "stat3": "wall-tablet layout", "stat4": "touch targets, minimum",
     "foot.1": "Screens show a fictional demo home, rendered by the real interface with sample data.",
     "foot.2": "Basecamp is a personal project, built for one very specific home.",
-    "alt.home": "Basecamp home screen on a wall tablet",
     "alt.zone": "Living room panel with climate and lights",
     "alt.energy": "Energy flows between solar, grid and home",
     "alt.weather": "Weather panel with 24-hour temperature chart",
     "alt.security": "Security panel with doors, windows and people",
     "alt.covers": "Shutters and awnings with presets",
-    "alt.p1": "Home screen on a phone", "alt.p2": "Room panel on a phone", "alt.p3": "Energy panel on a phone"
   },
   it: {
     "nav.overview": "Panoramica",
+    "nav.more": "E altro", "nav.rooms": "Stanze",
+    "energy.lead": "Flussi in tempo reale tra solare, rete e casa, potenza ora per ora e una stima della bolletta da confrontare con un’offerta a prezzo fisso.",
+    "energy.cap1": "Flussi in tempo reale, potenza oraria e previsione di domani.", "energy.cap2": "Il mese finora, la previsione e il confronto con il prezzo fisso.",
+    "security.cap1": "Telecamere dal vivo, porte, finestre e chi è in casa.", "security.cap2": "Video dal vivo, comunicazione a due vie e la foto di ogni chiamata.",
+    "more.eyebrow": "E altro", "more.title": "Una casa intera di dettagli.",
+    "alt.home": "Schermata home di Basecamp su un tablet a muro", "alt.p1": "Schermata home su telefono", "alt.p2": "Pannello stanza su telefono", "alt.p3": "Pannello energia su telefono",
     "nav.inside": "Sotto il cofano",
     "bill.eyebrow": "Bollette", "bill.title": "Conosci la bolletta<br>prima che arrivi.", "bill.lead": "Il mese finora, la previsione e il confronto con un’offerta a prezzo fisso. Capisci a colpo d’occhio se la tariffa indicizzata conviene davvero.",
     "intercom.eyebrow": "Citofono", "intercom.title": "Rispondi al citofono.<br>Da ovunque.", "intercom.lead": "Video dal vivo, comunicazione a due vie e apertura del cancello in un unico posto, con la foto di ogni chiamata per non perdere nessun visitatore.",
@@ -61,8 +69,7 @@ const I18N = {
     "vmc.eyebrow": "Ventilazione", "vmc.title": "Aria sempre fresca.", "vmc.lead": "Guarda l’unità di recupero di calore al lavoro: temperature, portate e filtri a colpo d’occhio, con boost e bypass a un tocco.",
     "music.eyebrow": "Musica", "music.title": "Ogni stanza ha<br>la sua colonna sonora.", "music.lead": "Controlla ogni diffusore, raggruppa le stanze, sfoglia la libreria e metti in coda il prossimo brano. Con Music Assistant.",
     "appl.eyebrow": "Elettrodomestici", "appl.title": "Bucato e stoviglie,<br>sotto controllo.", "appl.lead": "Avanzamento, tempo rimasto e programmi di lavastoviglie, lavatrice e asciugatrice, con le giuste cautele su avvio e stop.",
-    "alt.bill": "Stima della bolletta mensile confrontata con una tariffa fissa", "alt.intercom": "Pannello citofono con video dal vivo e ultime chiamate", "alt.robot": "Pannello del robot aspirapolvere con la mappa della pulizia", "alt.vmc": "Pannello della ventilazione con lo schema del recupero di calore", "alt.music": "Pannello musica con brano in riproduzione e coda", "alt.appl": "Lavastoviglie, lavatrice e asciugatrice con avanzamento",
- "nav.rooms": "Stanze", "nav.energy": "Energia", "nav.security": "Sicurezza", 
+    "alt.bill": "Stima della bolletta mensile confrontata con una tariffa fissa", "alt.intercom": "Pannello citofono con video dal vivo e ultime chiamate", "alt.robot": "Pannello del robot aspirapolvere con la mappa della pulizia", "alt.vmc": "Pannello della ventilazione con lo schema del recupero di calore", "alt.music": "Pannello musica con brano in riproduzione e coda", "alt.appl": "Lavastoviglie, lavatrice e asciugatrice con avanzamento", "nav.energy": "Energia", "nav.security": "Sicurezza", 
     "hero.eyebrow": "Basecamp UI",
     "hero.title": "La tua casa.<br><span class=\"grad\">Con un’occhiata.</span>",
     "hero.lead": "Un’interfaccia su misura per Home Assistant. Pensata per il tablet a muro, e a suo agio anche sul telefono.",
@@ -73,7 +80,6 @@ const I18N = {
     "rooms.lead": "Ogni zona mostra temperatura, umidità, luci e finestre aperte a colpo d’occhio. Entra per clima, dimmer e qualità dell’aria, con comandi fatti per dita vere.",
     "energy.eyebrow": "Energia",
     "energy.title": "Guarda il sole al lavoro.",
-    "energy.lead": "Flussi in tempo reale tra solare, rete e casa. Potenza ora per ora, autosufficienza e previsione di domani. La tua storia energetica in un’immagine.",
     "weather.eyebrow": "Meteo",
     "weather.title": "Il meteo del tuo giardino.",
     "weather.lead": "Le misure della tua stazione, le ultime 24 ore e le prossime 24 su un’unica linea. Vento, pioggia, umidità e pressione, in silenzio e con eleganza.",
@@ -97,13 +103,11 @@ const I18N = {
     "stat1": "passaggi di build", "stat2": "dipendenze da framework", "stat3": "layout per tablet a muro", "stat4": "target touch, minimo",
     "foot.1": "Le schermate mostrano una casa demo fittizia, disegnata dall’interfaccia vera con dati di esempio.",
     "foot.2": "Basecamp è un progetto personale, costruito per una casa molto specifica.",
-    "alt.home": "Schermata home di Basecamp su un tablet a muro",
     "alt.zone": "Pannello della zona giorno con clima e luci",
     "alt.energy": "Flussi di energia tra solare, rete e casa",
     "alt.weather": "Pannello meteo con grafico della temperatura a 24 ore",
     "alt.security": "Pannello sicurezza con porte, finestre e persone",
     "alt.covers": "Tapparelle e tende con preset",
-    "alt.p1": "Schermata home su telefono", "alt.p2": "Pannello stanza su telefono", "alt.p3": "Pannello energia su telefono"
   }
 };
 
@@ -116,6 +120,7 @@ function apply(lang) {
   document.documentElement.lang = lang;
   const dict = I18N[lang];
   document.querySelectorAll('[data-i18n]').forEach((el) => { const v = dict[el.dataset.i18n]; if (v != null) el.innerHTML = v; });
+  document.querySelectorAll('img[data-img]').forEach((el) => { const s = `assets/screens/${lang}/${el.dataset.img}.webp`; if (!el.src.endsWith(s)) el.src = s; });
   document.querySelectorAll('[data-i18n-alt]').forEach((el) => { const v = dict[el.dataset.i18nAlt]; if (v != null) el.alt = v; });
   document.querySelectorAll('.lang button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.lang === lang)));
   document.title = lang === 'it' ? 'Basecamp UI — La tua casa, con un’occhiata' : 'Basecamp UI — Your home, at a glance';

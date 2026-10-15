@@ -8,7 +8,7 @@
 <meta name="theme-color" content="#000000">
 <meta property="og:title" content="Basecamp UI">
 <meta property="og:description" content="Your home. At a glance. A custom interface for Home Assistant.">
-<meta property="og:image" content="assets/screens/home-tablet.webp">
+<meta property="og:image" content="assets/screens/en/home-tablet.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Sora:wght@400;500;600&display=swap" rel="stylesheet">
@@ -19,10 +19,10 @@
 <header class="nav"><div class="nav-in">
   <a class="brand" href="#top">Basecamp</a>
   <ul>
-    <li><a href="#overview" data-i18n="nav.overview">Overview</a></li>
     <li><a href="#rooms" data-i18n="nav.rooms">Rooms</a></li>
     <li><a href="#energy" data-i18n="nav.energy">Energy</a></li>
     <li><a href="#security" data-i18n="nav.security">Security</a></li>
+    <li><a href="#more" data-i18n="nav.more">And more</a></li>
     <li><a href="#inside" data-i18n="nav.inside">Under the hood</a></li>
   </ul>
   <div class="lang" role="group" aria-label="Language">
@@ -37,150 +37,133 @@
       <p class="eyebrow rv" data-i18n="hero.eyebrow">Basecamp UI</p>
       <h1 class="rv" data-i18n="hero.title">Your home.<br><span class="grad">At a glance.</span></h1>
       <p class="lead rv" data-i18n="hero.lead">A custom interface for Home Assistant. Designed for the tablet on your wall, and just as at home on your phone.</p>
-      <div class="shot tablet rv"><img src="assets/screens/home-tablet.webp" width="1920" height="1200" data-i18n-alt="alt.home" alt="Basecamp home screen on a wall tablet"></div>
+      <div class="shot tablet rv"><img src="assets/screens/en/home-tablet.webp" data-img="home-tablet" width="1920" height="1200" data-i18n-alt="alt.home" alt="" ></div>
     </div>
   </section>
 
   <section id="overview" class="statement">
     <div class="wrap">
       <h2 class="rv" data-i18n="overview.title">Everything that matters.<br>Nothing that doesn’t.</h2>
-      <p class="lead rv" data-i18n="overview.lead">Weather, energy, rooms, security and access on one calm screen you can read from across the room. Big numbers, soft colour, zero clutter.</p>
+      <p class="lead rv" data-i18n="overview.lead"></p>
     </div>
   </section>
 
   <section id="rooms" class="dark2 feature">
     <div class="pair">
       <div class="copy rv">
-        <p class="eyebrow" data-i18n="rooms.eyebrow"></p>
+        <p class="eyebrow" data-i18n="rooms.eyebrow">Rooms</p>
         <h2 data-i18n="rooms.title"></h2>
         <p class="lead" data-i18n="rooms.lead"></p>
       </div>
-      <div class="shot panel rv"><img loading="lazy" src="assets/screens/zone.webp" width="1160" height="1600" data-i18n-alt="alt.zone" alt=""></div>
-    </div>
-  </section>
-  <section id="energy" class="feature">
-    <div class="pair rev">
-      <div class="copy rv">
-        <p class="eyebrow" data-i18n="energy.eyebrow"></p>
-        <h2 data-i18n="energy.title"></h2>
-        <p class="lead" data-i18n="energy.lead"></p>
-      </div>
-      <div class="shot panel rv"><img loading="lazy" src="assets/screens/energy.webp" width="1160" height="1600" data-i18n-alt="alt.energy" alt=""></div>
-    </div>
-  </section>
-  <section id="bill" class="dark2 feature">
-    <div class="pair">
-      <div class="copy rv">
-        <p class="eyebrow" data-i18n="bill.eyebrow"></p>
-        <h2 data-i18n="bill.title"></h2>
-        <p class="lead" data-i18n="bill.lead"></p>
-      </div>
-      <div class="shot panel cut rv"><img loading="lazy" src="assets/screens/bill.webp" width="1160" height="2164" data-i18n-alt="alt.bill" alt=""></div>
-    </div>
-  </section>
-  <section id="weather" class="feature">
-    <div class="pair rev">
-      <div class="copy rv">
-        <p class="eyebrow" data-i18n="weather.eyebrow"></p>
-        <h2 data-i18n="weather.title"></h2>
-        <p class="lead" data-i18n="weather.lead"></p>
-      </div>
-      <div class="shot panel rv"><img loading="lazy" src="assets/screens/weather.webp" width="1160" height="1600" data-i18n-alt="alt.weather" alt=""></div>
-    </div>
-  </section>
-  <section id="security" class="dark2 feature">
-    <div class="pair">
-      <div class="copy rv">
-        <p class="eyebrow" data-i18n="security.eyebrow"></p>
-        <h2 data-i18n="security.title"></h2>
-        <p class="lead" data-i18n="security.lead"></p>
-      </div>
-      <div class="shot panel cut rv"><img loading="lazy" src="assets/screens/security.webp" width="1160" height="2100" data-i18n-alt="alt.security" alt=""></div>
-    </div>
-  </section>
-  <section class="feature">
-    <div class="wrap">
-      <p class="eyebrow rv" data-i18n="intercom.eyebrow">Intercom</p>
-      <h2 class="rv" data-i18n="intercom.title">Answer the door.<br>From anywhere.</h2>
-      <p class="lead rv" data-i18n="intercom.lead"></p>
-      <div class="shot window rv"><img loading="lazy" src="assets/screens/intercom.webp" width="1600" height="1080" data-i18n-alt="alt.intercom" alt=""></div>
-    </div>
-  </section>
-  <section id="robot" class="dark2 feature">
-    <div class="pair rev">
-      <div class="copy rv">
-        <p class="eyebrow" data-i18n="robot.eyebrow"></p>
-        <h2 data-i18n="robot.title"></h2>
-        <p class="lead" data-i18n="robot.lead"></p>
-      </div>
-      <div class="shot panel cut rv"><img loading="lazy" src="assets/screens/robot.webp" width="1160" height="2300" data-i18n-alt="alt.robot" alt=""></div>
-    </div>
-  </section>
-  <section id="vmc" class="feature">
-    <div class="pair">
-      <div class="copy rv">
-        <p class="eyebrow" data-i18n="vmc.eyebrow"></p>
-        <h2 data-i18n="vmc.title"></h2>
-        <p class="lead" data-i18n="vmc.lead"></p>
-      </div>
-      <div class="shot panel cut rv"><img loading="lazy" src="assets/screens/vmc.webp" width="1040" height="2000" data-i18n-alt="alt.vmc" alt=""></div>
-    </div>
-  </section>
-  <section id="music" class="dark2 feature">
-    <div class="pair rev">
-      <div class="copy rv">
-        <p class="eyebrow" data-i18n="music.eyebrow"></p>
-        <h2 data-i18n="music.title"></h2>
-        <p class="lead" data-i18n="music.lead"></p>
-      </div>
-      <div class="shot panel cut rv"><img loading="lazy" src="assets/screens/music.webp" width="1160" height="1900" data-i18n-alt="alt.music" alt=""></div>
-    </div>
-  </section>
-  <section id="appliances" class="feature">
-    <div class="pair">
-      <div class="copy rv">
-        <p class="eyebrow" data-i18n="appl.eyebrow"></p>
-        <h2 data-i18n="appl.title"></h2>
-        <p class="lead" data-i18n="appl.lead"></p>
-      </div>
-      <div class="shot panel rv"><img loading="lazy" src="assets/screens/appl.webp" width="1160" height="1500" data-i18n-alt="alt.appl" alt=""></div>
-    </div>
-  </section>
-  <section class="dark2 feature">
-    <div class="pair rev">
-      <div class="copy rv">
-        <p class="eyebrow" data-i18n="covers.eyebrow">Shutters &amp; awnings</p>
-        <h2 data-i18n="covers.title">Light, exactly<br>how you like it.</h2>
-        <p class="lead" data-i18n="covers.lead"></p>
-      </div>
-      <div class="shot panel rv"><img loading="lazy" src="assets/screens/covers.webp" width="1160" height="960" data-i18n-alt="alt.covers" alt=""></div>
+      <div class="shot panel rv"><img loading="lazy" src="assets/screens/en/zone.webp" data-img="zone" width="1160" height="1600" data-i18n-alt="alt.zone" alt="" ></div>
     </div>
   </section>
 
-  <section class="feature">
+  <section id="energy" class="feature">
+    <div class="wrap">
+      <p class="eyebrow rv" data-i18n="energy.eyebrow">Energy</p>
+      <h2 class="rv" data-i18n="energy.title"></h2>
+      <p class="lead rv" data-i18n="energy.lead"></p>
+      <div class="duo">
+        <figure class="rv"><div class="shot panel"><img loading="lazy" src="assets/screens/en/energy.webp" data-img="energy" width="1160" height="1600" data-i18n-alt="alt.energy" alt="" ></div><figcaption data-i18n="energy.cap1"></figcaption></figure>
+        <figure class="rv"><div class="shot panel cut"><img loading="lazy" src="assets/screens/en/bill.webp" data-img="bill" width="1160" height="2164" data-i18n-alt="alt.bill" alt="" ></div><figcaption data-i18n="energy.cap2"></figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="security" class="dark2 feature">
+    <div class="wrap">
+      <p class="eyebrow rv" data-i18n="security.eyebrow">Security</p>
+      <h2 class="rv" data-i18n="security.title"></h2>
+      <p class="lead rv" data-i18n="security.lead"></p>
+      <div class="duo duo-wide">
+        <figure class="rv"><div class="shot panel cut"><img loading="lazy" src="assets/screens/en/security.webp" data-img="security" width="1160" height="2100" data-i18n-alt="alt.security" alt="" ></div><figcaption data-i18n="security.cap1"></figcaption></figure>
+        <figure class="rv"><div class="shot window"><img loading="lazy" src="assets/screens/en/intercom.webp" data-img="intercom" width="1600" height="1076" data-i18n-alt="alt.intercom" alt="" ></div><figcaption data-i18n="security.cap2"></figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="more" class="feature">
+    <div class="wrap">
+      <p class="eyebrow rv" data-i18n="more.eyebrow">And more</p>
+      <h2 class="rv" data-i18n="more.title"></h2>
+      <div class="bento">
+      <article class="bento-card rv">
+        <div class="bento-copy">
+          <p class="eyebrow" data-i18n="weather.eyebrow"></p>
+          <h3 data-i18n="weather.title"></h3>
+          <p data-i18n="weather.lead"></p>
+        </div>
+        <div class="bento-shot"><img loading="lazy" src="assets/screens/en/weather.webp" data-img="weather" width="1160" height="1600" data-i18n-alt="alt.weather" alt="" ></div>
+      </article>
+      <article class="bento-card rv">
+        <div class="bento-copy">
+          <p class="eyebrow" data-i18n="vmc.eyebrow"></p>
+          <h3 data-i18n="vmc.title"></h3>
+          <p data-i18n="vmc.lead"></p>
+        </div>
+        <div class="bento-shot"><img loading="lazy" src="assets/screens/en/vmc.webp" data-img="vmc" width="1040" height="2000" data-i18n-alt="alt.vmc" alt="" ></div>
+      </article>
+      <article class="bento-card rv">
+        <div class="bento-copy">
+          <p class="eyebrow" data-i18n="robot.eyebrow"></p>
+          <h3 data-i18n="robot.title"></h3>
+          <p data-i18n="robot.lead"></p>
+        </div>
+        <div class="bento-shot"><img loading="lazy" src="assets/screens/en/robot.webp" data-img="robot" width="1160" height="2300" data-i18n-alt="alt.robot" alt="" ></div>
+      </article>
+      <article class="bento-card rv">
+        <div class="bento-copy">
+          <p class="eyebrow" data-i18n="music.eyebrow"></p>
+          <h3 data-i18n="music.title"></h3>
+          <p data-i18n="music.lead"></p>
+        </div>
+        <div class="bento-shot"><img loading="lazy" src="assets/screens/en/music.webp" data-img="music" width="1160" height="1900" data-i18n-alt="alt.music" alt="" ></div>
+      </article>
+      <article class="bento-card rv">
+        <div class="bento-copy">
+          <p class="eyebrow" data-i18n="appl.eyebrow"></p>
+          <h3 data-i18n="appl.title"></h3>
+          <p data-i18n="appl.lead"></p>
+        </div>
+        <div class="bento-shot"><img loading="lazy" src="assets/screens/en/appl.webp" data-img="appl" width="1160" height="1500" data-i18n-alt="alt.appl" alt="" ></div>
+      </article>
+      <article class="bento-card rv">
+        <div class="bento-copy">
+          <p class="eyebrow" data-i18n="covers.eyebrow"></p>
+          <h3 data-i18n="covers.title"></h3>
+          <p data-i18n="covers.lead"></p>
+        </div>
+        <div class="bento-shot"><img loading="lazy" src="assets/screens/en/covers.webp" data-img="covers" width="1160" height="960" data-i18n-alt="alt.covers" alt="" ></div>
+      </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="dark2 feature">
     <div class="wrap">
       <p class="eyebrow rv" data-i18n="phone.eyebrow">Everywhere</p>
-      <h2 class="rv" data-i18n="phone.title">Same home.<br>Pocket size.</h2>
-      <p class="lead rv" data-i18n="phone.lead">The layout reflows for phones and foldables without losing a single control. Open it from the Home Assistant app and you are home.</p>
+      <h2 class="rv" data-i18n="phone.title"></h2>
+      <p class="lead rv" data-i18n="phone.lead"></p>
       <div class="phones">
-        <div class="phone rv"><img loading="lazy" src="assets/screens/home-phone.webp" width="824" height="1740" data-i18n-alt="alt.p1" alt="Home screen on a phone"></div>
-        <div class="phone rv"><img loading="lazy" src="assets/screens/zone-phone.webp" width="824" height="1740" data-i18n-alt="alt.p2" alt="Room panel on a phone"></div>
-        <div class="phone rv"><img loading="lazy" src="assets/screens/energy-phone.webp" width="824" height="1740" data-i18n-alt="alt.p3" alt="Energy panel on a phone"></div>
+        <div class="phone rv"><img loading="lazy" src="assets/screens/en/home-phone.webp" data-img="home-phone" width="824" height="1740" data-i18n-alt="alt.p1" alt="" ></div>
+        <div class="phone rv"><img loading="lazy" src="assets/screens/en/zone-phone.webp" data-img="zone-phone" width="824" height="1740" data-i18n-alt="alt.p2" alt="" ></div>
+        <div class="phone rv"><img loading="lazy" src="assets/screens/en/energy-phone.webp" data-img="energy-phone" width="824" height="1740" data-i18n-alt="alt.p3" alt="" ></div>
       </div>
     </div>
   </section>
 
-  <section id="inside" class="dark2">
+  <section id="inside">
     <div class="wrap">
       <p class="eyebrow rv" data-i18n="inside.eyebrow">Under the hood</p>
-      <h2 class="rv" data-i18n="inside.title">Simple on the surface.<br>Rigorous underneath.</h2>
+      <h2 class="rv" data-i18n="inside.title"></h2>
       <div class="cards">
-        <article class="card rv"><span class="k" data-i18n="card1.k">Zero build</span><h3 data-i18n="card1.t">Vanilla, by choice.</h3><p data-i18n="card1.p">Plain JavaScript and web components. No framework, no bundler, no waiting.</p></article>
-        <article class="card rv"><span class="k" data-i18n="card2.k">Zero wiring</span><h3 data-i18n="card2.t">Built from your home.</h3><p data-i18n="card2.p">Rooms, devices and labels come straight from Home Assistant’s registries. Nothing is hard-wired by hand.</p></article>
-        <article class="card rv"><span class="k" data-i18n="card3.k">Safe</span><h3 data-i18n="card3.t">Read-only by default.</h3><p data-i18n="card3.p">The interface can only call a short, explicit list of services. Sensitive ones demand a long press or a code.</p></article>
-        <article class="card rv"><span class="k" data-i18n="card4.k">Tablet first</span><h3 data-i18n="card4.t">Made for the wall.</h3><p data-i18n="card4.p">Designed for 1280×800 wall tablets, with generous touch targets and a dark, glare-free palette.</p></article>
-        <article class="card rv"><span class="k" data-i18n="card5.k">Tested</span><h3 data-i18n="card5.t">Logic you can trust.</h3><p data-i18n="card5.p">Billing, schedules, alerts and ventilation live in pure modules, covered by tests that need no browser.</p></article>
-        <article class="card rv"><span class="k" data-i18n="card6.k">Private</span><h3 data-i18n="card6.t">Local, always.</h3><p data-i18n="card6.p">No cloud and no token in the code. It runs inside your own Home Assistant, on your own network.</p></article>
+        <article class="card rv"><span class="k" data-i18n="card1.k"></span><h3 data-i18n="card1.t"></h3><p data-i18n="card1.p"></p></article>
+        <article class="card rv"><span class="k" data-i18n="card2.k"></span><h3 data-i18n="card2.t"></h3><p data-i18n="card2.p"></p></article>
+        <article class="card rv"><span class="k" data-i18n="card3.k"></span><h3 data-i18n="card3.t"></h3><p data-i18n="card3.p"></p></article>
+        <article class="card rv"><span class="k" data-i18n="card4.k"></span><h3 data-i18n="card4.t"></h3><p data-i18n="card4.p"></p></article>
+        <article class="card rv"><span class="k" data-i18n="card5.k"></span><h3 data-i18n="card5.t"></h3><p data-i18n="card5.p"></p></article>
+        <article class="card rv"><span class="k" data-i18n="card6.k"></span><h3 data-i18n="card6.t"></h3><p data-i18n="card6.p"></p></article>
       </div>
       <div class="stats">
         <div class="stat rv"><b>0</b><span data-i18n="stat1">build steps</span></div>
@@ -193,8 +176,8 @@
 </main>
 
 <footer>
-  <p data-i18n="foot.1">Screens show a fictional demo home, rendered by the real interface with sample data.</p>
-  <p data-i18n="foot.2">Basecamp is a personal project, built for one very specific home.</p>
+  <p data-i18n="foot.1"></p>
+  <p data-i18n="foot.2"></p>
 </footer>
 
 <script src="assets/app.js"></script>
