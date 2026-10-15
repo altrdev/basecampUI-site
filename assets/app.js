@@ -1,6 +1,7 @@
 const I18N = {
   en: {
     "nav.overview": "Overview",
+    "nav.contact": "Contact", "cta.eyebrow": "Tailor-made", "cta.title": "Want Basecamp<br>for your home?", "cta.lead": "Basecamp is built around one house. I can design a version around yours: your rooms, your devices, your features.", "cta.button": "Get in touch",
     "nav.demo": "Demo", "demo.eyebrow": "Live demo", "demo.title": "Try it yourself.", "demo.lead": "A fictional home running the real interface. Switch lights, move shutters, open every panel. Safety-critical commands are switched off.", "demo.launch": "Launch the demo", "demo.full": "Open full screen", "foot.3": "The source code in /demo is licensed under",
     "nav.more": "And more", "nav.rooms": "Rooms",
     "energy.lead": "Live flows between solar, grid and home, hour-by-hour power, and a bill estimate you can compare with a fixed-rate offer.",
@@ -57,6 +58,7 @@ const I18N = {
   },
   it: {
     "nav.overview": "Panoramica",
+    "nav.contact": "Contatti", "cta.eyebrow": "Su misura", "cta.title": "Vuoi Basecamp<br>per la tua casa?", "cta.lead": "Basecamp è costruita intorno a una casa. Posso progettarne una versione intorno alla tua: le tue stanze, i tuoi dispositivi, le tue funzioni.", "cta.button": "Contattami",
     "nav.demo": "Demo", "demo.eyebrow": "Demo dal vivo", "demo.title": "Provala tu.", "demo.lead": "Una casa fittizia con l’interfaccia vera. Accendi le luci, muovi le tapparelle, apri ogni pannello. I comandi critici per la sicurezza sono disattivati.", "demo.launch": "Avvia la demo", "demo.full": "Apri a schermo intero", "foot.3": "Il codice sorgente in /demo è sotto licenza",
     "nav.more": "E altro", "nav.rooms": "Stanze",
     "energy.lead": "Flussi in tempo reale tra solare, rete e casa, potenza ora per ora e una stima della bolletta da confrontare con un’offerta a prezzo fisso.",
