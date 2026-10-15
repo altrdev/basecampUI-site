@@ -1,6 +1,7 @@
 const I18N = {
   en: {
     "nav.overview": "Overview",
+    "nav.demo": "Demo", "demo.eyebrow": "Live demo", "demo.title": "Try it yourself.", "demo.lead": "A fictional home running the real interface. Switch lights, move shutters, open every panel. Safety-critical commands are switched off.", "demo.launch": "Launch the demo", "demo.full": "Open full screen", "foot.3": "The source code in /demo is licensed under",
     "nav.more": "And more", "nav.rooms": "Rooms",
     "energy.lead": "Live flows between solar, grid and home, hour-by-hour power, and a bill estimate you can compare with a fixed-rate offer.",
     "energy.cap1": "Live flows, hourly power and tomorrow’s forecast.", "energy.cap2": "Month so far, forecast and a fixed-rate comparison.",
@@ -56,6 +57,7 @@ const I18N = {
   },
   it: {
     "nav.overview": "Panoramica",
+    "nav.demo": "Demo", "demo.eyebrow": "Demo dal vivo", "demo.title": "Provala tu.", "demo.lead": "Una casa fittizia con l’interfaccia vera. Accendi le luci, muovi le tapparelle, apri ogni pannello. I comandi critici per la sicurezza sono disattivati.", "demo.launch": "Avvia la demo", "demo.full": "Apri a schermo intero", "foot.3": "Il codice sorgente in /demo è sotto licenza",
     "nav.more": "E altro", "nav.rooms": "Stanze",
     "energy.lead": "Flussi in tempo reale tra solare, rete e casa, potenza ora per ora e una stima della bolletta da confrontare con un’offerta a prezzo fisso.",
     "energy.cap1": "Flussi in tempo reale, potenza oraria e previsione di domani.", "energy.cap2": "Il mese finora, la previsione e il confronto con il prezzo fisso.",
@@ -126,8 +128,34 @@ function apply(lang) {
   document.title = lang === 'it' ? 'Basecamp UI — La tua casa, con un’occhiata' : 'Basecamp UI — Your home, at a glance';
   try { localStorage.setItem(KEY, lang); } catch {}
 }
-document.querySelectorAll('.lang button').forEach((b) => b.addEventListener('click', () => apply(b.dataset.lang)));
+const demoUrl = (embed) => `demo/?${embed ? 'embed&' : ''}lang=${document.documentElement.lang}`;
+function layoutDemo() {
+  const box = document.getElementById('demo-frame');
+  const frame = box?.querySelector('iframe');
+  if (!frame) return;
+  const w = box.clientWidth;
+  if (w >= 820) { const k = w / 1280; box.style.height = `${800 * k}px`; frame.style.cssText = `width:1280px;height:800px;transform:scale(${k})`; }
+  else { box.style.height = '760px'; frame.style.cssText = 'width:100%;height:760px;transform:none'; }
+}
+function launchDemo() {
+  const box = document.getElementById('demo-frame');
+  if (box.querySelector('iframe')) return;
+  const frame = Object.assign(document.createElement('iframe'), { src: demoUrl(true), title: 'Basecamp UI demo', allow: 'fullscreen' });
+  box.replaceChildren(frame);
+  box.classList.add('live');
+  layoutDemo();
+}
+document.getElementById('demo-launch')?.addEventListener('click', launchDemo);
+addEventListener('resize', layoutDemo);
+function syncDemoLang() {
+  const frame = document.querySelector('#demo-frame iframe');
+  if (frame) frame.src = demoUrl(true);
+  const full = document.getElementById('demo-full');
+  if (full) full.href = demoUrl(false);
+}
+document.querySelectorAll('.lang button').forEach((b) => b.addEventListener('click', () => { apply(b.dataset.lang); syncDemoLang(); }));
 apply(detect());
+syncDemoLang();
 
 const io = 'IntersectionObserver' in window ? new IntersectionObserver((entries) => entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: 0.12 }) : null;
 document.querySelectorAll('.rv').forEach((el) => (io ? io.observe(el) : el.classList.add('in')));

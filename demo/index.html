@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Basecamp UI · demo</title>
+  <meta name="robots" content="noindex">
+  <style>
+    html, body { margin: 0; height: 100%; background: #131417; }
+    .demo-note { position: fixed; left: 12px; bottom: 12px; z-index: 50; display: flex; align-items: center; gap: 10px; padding: 7px 8px 7px 14px; border-radius: 999px; background: rgba(20,20,23,.86); backdrop-filter: blur(14px); border: 1px solid #2a2c33; color: #a1a1a6; font: 500 12px/1 system-ui, sans-serif; }
+    .demo-note b { color: #e8a33d; font-weight: 600; }
+    .demo-note a, .demo-note button { font: inherit; color: #f5f5f2; background: none; border: 0; padding: 5px 9px; border-radius: 999px; cursor: pointer; text-decoration: none; }
+    .demo-note button[aria-pressed=true] { background: #f5f5f2; color: #000; }
+    .demo-note .x { color: #a1a1a6; padding: 5px 8px; }
+  </style>
+</head>
+<body>
+<div class="demo-note" id="note">
+  <span><b>DEMO</b> <span id="note-text"></span></span>
+  <span id="langs"><button data-l="it">IT</button><button data-l="en">EN</button></span>
+  <button class="x" id="note-x" aria-label="Close">✕</button>
+</div>
+<script type="module">
+  const params = new URLSearchParams(location.search);
+  const lang = params.get('lang') === 'en' ? 'en' : 'it';
+  document.documentElement.lang = lang;
+  document.getElementById('note-text').textContent = lang === 'en' ? 'Fictional data · some controls are disabled' : 'Dati fittizi · alcuni comandi sono disattivati';
+  for (const b of document.querySelectorAll('#langs button')) {
+    b.setAttribute('aria-pressed', String(b.dataset.l === lang));
+    b.onclick = () => { params.set('lang', b.dataset.l); location.search = params.toString(); };
+  }
+  document.getElementById('note-x').onclick = () => document.getElementById('note').remove();
+  if (params.has('embed')) document.getElementById('note').remove();
+
+  const { createHA } = await import('./fake/ha-fake.js');
+  const { installFakeWebSocket } = await import('./fake/fake-ws.js');
+  const ha = createHA();
+  installFakeWebSocket(ha);
+
+  // config.json: il server di Music Assistant finto è questa stessa cartella (l'indirizzo dipende da dove è pubblicata).
+  const realFetch = window.fetch.bind(window);
+  window.fetch = async (input, init) => {
+    const url = typeof input === 'string' ? input : input.url;
+    if (/\/config\.json(\?|$)/.test(url)) {
+      const cfg = await (await realFetch(input, init)).json();
+      cfg.music = { ...cfg.music, server: new URL('.', document.baseURI).href };
+      return new Response(JSON.stringify(cfg), { headers: { 'Content-Type': 'application/json' } });
+    }
+    return realFetch(input, init);
+  };
+
+  if (lang === 'en') await import('./fake/i18n-en.js');
+  await import('./app/basecamp-panel.js');
+  const { createConnection, createLongLivedTokenAuth } = await import('./app/vendor/home-assistant-js-websocket/index.js');
+
+  const url = location.origin;
+  const connection = await createConnection({ auth: createLongLivedTokenAuth(url, 'demo') });
+  const config = await connection.sendMessagePromise({ type: 'get_config' });
+  const user = await connection.sendMessagePromise({ type: 'auth/current_user' });
+  const states = Object.fromEntries((await connection.sendMessagePromise({ type: 'get_states' })).map((s) => [s.entity_id, s]));
+  const panel = document.createElement('basecamp-panel');
+  panel.hass = {
+    connection, config, user, states, language: lang,
+    hassUrl: (path = '') => new URL(path, document.baseURI).href,
+    async callService(domain, service, data, target) { return ha.callService(domain, service, data, target); },
+  };
+  const narrow = matchMedia('(max-width: 870px)');
+  panel.narrow = narrow.matches;
+  narrow.addEventListener('change', () => (panel.narrow = narrow.matches));
+  document.body.append(panel);
+</script>
+</body>
+</html>

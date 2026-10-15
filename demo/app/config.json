@@ -1,0 +1,786 @@
+{
+  "name": "Casa Aurora",
+  "zones": [
+    {
+      "id": "giorno",
+      "area": "living",
+      "name": "Zona giorno",
+      "icon": "mdi:sofa"
+    },
+    {
+      "id": "bagno",
+      "area": "bath",
+      "name": "Bagno",
+      "icon": "mdi:shower"
+    },
+    {
+      "id": "camera",
+      "area": "master",
+      "name": "Camera",
+      "icon": "mdi:bed-king"
+    },
+    {
+      "id": "cameretta",
+      "area": "kids",
+      "name": "Cameretta",
+      "icon": "mdi:bed-single"
+    },
+    {
+      "id": "studio",
+      "area": "office",
+      "name": "Studio",
+      "icon": "mdi:desk"
+    },
+    {
+      "id": "lavanderia",
+      "area": "laundry",
+      "name": "Lavanderia",
+      "icon": "mdi:washing-machine"
+    }
+  ],
+  "weather": {
+    "condition": "weather.home",
+    "temperature": "sensor.outdoor_temperature",
+    "feels_like": "sensor.outdoor_feels_like",
+    "min_today": "sensor.outdoor_temperature_min",
+    "max_today": "sensor.outdoor_temperature_max",
+    "humidity": "sensor.outdoor_humidity",
+    "wind": "sensor.wind_speed",
+    "gust": "sensor.wind_gust",
+    "wind_direction": "sensor.wind_direction",
+    "rain_today": "sensor.rain_today",
+    "rain_rate": "sensor.rain_rate",
+    "uv": "sensor.uv_index",
+    "dew_point": "sensor.dew_point",
+    "max_gust": "sensor.wind_gust_max",
+    "pressure": "sensor.pressure",
+    "radiation": "sensor.solar_radiation",
+    "lux": "sensor.solar_lux"
+  },
+  "energy": {
+    "production": "sensor.solar_power",
+    "consumption": "sensor.home_power",
+    "grid": "sensor.grid_power",
+    "grid_positive": "immissione",
+    "produced_today": "sensor.solar_yield_today",
+    "imported_today": "sensor.grid_import_today",
+    "exported_today": "sensor.grid_export_today",
+    "imported_total": "sensor.grid_import_total",
+    "exported_total": "sensor.grid_export_total",
+    "forecast_today": "sensor.forecast_today",
+    "forecast_remaining": "sensor.forecast_remaining",
+    "forecast_tomorrow": "sensor.forecast_tomorrow",
+    "peak_today": "sensor.solar_peak_today",
+    "inverter_state": "sensor.inverter_status",
+    "inverter_temperature": "sensor.inverter_temperature",
+    "produced_total": "sensor.solar_yield_total",
+    "flows": [
+      {
+        "name": "Pompa di calore",
+        "power": "sensor.heat_pump_power",
+        "icon": "mdi:heat-pump",
+        "color": "var(--bc-violet)"
+      },
+      {
+        "name": "Ventilazione",
+        "power": "sensor.vmc_power",
+        "icon": "mdi:fan",
+        "color": "#7FD3E0"
+      },
+      {
+        "name": "Wallbox",
+        "power": "sensor.wallbox_power",
+        "icon": "mdi:ev-station",
+        "color": "#B6E36B",
+        "only_above_w": 100
+      }
+    ],
+    "pun": {
+      "f1": "sensor.pun_fascia_f1",
+      "f2": "sensor.pun_fascia_f2",
+      "f3": "sensor.pun_fascia_f3",
+      "mono": "sensor.pun_mono_orario",
+      "current": "sensor.pun_fascia_corrente"
+    },
+    "bill": {
+      "power_kw": 6,
+      "meter_calibration": 1,
+      "tariff": {
+        "name": "Tariffa indicizzata",
+        "type": "indexed",
+        "spread": 0.013,
+        "losses": 0.1,
+        "cdispd": 0.015,
+        "fixed_fee_month": 7.5
+      },
+      "alternative": {
+        "name": "Tariffa fissa 36 mesi",
+        "type": "fixed",
+        "price": {
+          "mono": 0.135
+        },
+        "cdispd": 0.015,
+        "fixed_fee_month": 7,
+        "active": true
+      },
+      "capd_month": 0.007,
+      "network": {
+        "transport_kwh": 0.0119,
+        "uc3_kwh": 0.00276,
+        "uc6_kwh": 7e-05,
+        "fixed_fee_month": 1.92,
+        "power_fee_kw_month": 1.96,
+        "uc6_kw_month": 0.016567
+      },
+      "charges": {
+        "asos_kwh": 0.031515,
+        "arim_kwh": 0.001638
+      },
+      "excise_kwh": 0.0227,
+      "vat": 0.1,
+      "rai_fee": {
+        "month": 9,
+        "months": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ]
+      },
+      "history": [
+        {
+          "month": "2025-10",
+          "kwh": [
+            28,
+            64,
+            76
+          ],
+          "pun": [
+            0.118,
+            0.122,
+            0.1
+          ]
+        },
+        {
+          "month": "2025-11",
+          "kwh": [
+            96,
+            118,
+            142
+          ],
+          "pun": [
+            0.13,
+            0.124,
+            0.106
+          ]
+        },
+        {
+          "month": "2025-12",
+          "kwh": [
+            158,
+            150,
+            162
+          ],
+          "pun": [
+            0.13,
+            0.12,
+            0.105
+          ]
+        },
+        {
+          "month": "2026-01",
+          "kwh": [
+            190,
+            232,
+            226
+          ],
+          "pun": [
+            0.151,
+            0.137,
+            0.118
+          ]
+        },
+        {
+          "month": "2026-02",
+          "kwh": [
+            121,
+            164,
+            126
+          ],
+          "pun": [
+            0.122,
+            0.12,
+            0.105
+          ]
+        },
+        {
+          "month": "2026-03",
+          "kwh": [
+            40,
+            88,
+            98
+          ],
+          "pun": [
+            0.142,
+            0.153,
+            0.135
+          ]
+        },
+        {
+          "month": "2026-04",
+          "kwh": [
+            9,
+            47,
+            76
+          ],
+          "pun": [
+            0.111,
+            0.138,
+            0.117
+          ]
+        },
+        {
+          "month": "2026-05",
+          "kwh": [
+            11,
+            38,
+            74
+          ],
+          "pun": [
+            0.107,
+            0.131,
+            0.121
+          ]
+        },
+        {
+          "month": "2026-06",
+          "kwh": [
+            7,
+            38,
+            75
+          ],
+          "pun": [
+            0.126,
+            0.152,
+            0.127
+          ]
+        },
+        {
+          "month": "2026-07",
+          "kwh": [
+            12,
+            40,
+            79
+          ],
+          "pun": [
+            0.154,
+            0.169,
+            0.152
+          ]
+        },
+        {
+          "month": "2026-08",
+          "kwh": [
+            15,
+            50,
+            85
+          ],
+          "pun": [
+            0.175,
+            0.204,
+            0.172
+          ]
+        },
+        {
+          "month": "2026-09",
+          "kwh": [
+            15,
+            58,
+            80
+          ],
+          "pun": [
+            0.206,
+            0.228,
+            0.197
+          ]
+        }
+      ]
+    }
+  },
+  "access": [
+    "lock.front_door",
+    "lock.studio_door",
+    "cover.garage_door",
+    "button.gate_pedestrian",
+    "button.gate_car"
+  ],
+  "alarm": {
+    "exit_delay_s": 30,
+    "entry_delay_s": 30
+  },
+  "security": {
+    "cameras": [
+      {
+        "name": "Fronte",
+        "server": "http://demo.local:1984/",
+        "url": "front"
+      },
+      {
+        "name": "Ingresso",
+        "server": "http://demo.local:1984/",
+        "url": "entrance"
+      },
+      {
+        "name": "Retro",
+        "server": "http://demo.local:1984/",
+        "url": "back"
+      }
+    ],
+    "openings": [
+      "binary_sensor.door_front",
+      "binary_sensor.window_living",
+      "binary_sensor.window_kitchen",
+      "binary_sensor.window_bedroom"
+    ],
+    "people": [
+      {
+        "entity": "person.anna",
+        "battery": "sensor.anna_phone_battery"
+      },
+      {
+        "entity": "person.marco",
+        "battery": "sensor.marco_phone_battery"
+      }
+    ],
+    "player": "webrtc-camera.js"
+  },
+  "hold_to_confirm": [
+    "script.good_morning",
+    "script.good_night",
+    "button.gate_pedestrian",
+    "button.gate_car"
+  ],
+  "tap_to_confirm": [
+    "button.gate_pedestrian",
+    "button.gate_car"
+  ],
+  "quick_alternates": [
+    [
+      "script.good_morning",
+      "script.good_night"
+    ]
+  ],
+  "cover_presets": [
+    {
+      "label": "Metà",
+      "positions": {
+        "cover.living_shutter": 55,
+        "cover.master_shutter": 50
+      }
+    },
+    {
+      "label": "Aria",
+      "positions": {
+        "cover.living_shutter": 10,
+        "cover.master_shutter": 10
+      }
+    }
+  ],
+  "entities": {
+    "script.good_morning": {
+      "name": "Buongiorno",
+      "icon": "mdi:weather-sunny",
+      "color": "amber"
+    },
+    "script.good_night": {
+      "name": "Buonanotte",
+      "icon": "mdi:weather-night",
+      "color": "violet"
+    },
+    "light.garden": {
+      "name": "Giardino",
+      "icon": "mdi:outdoor-lamp"
+    },
+    "light.stairs": {
+      "name": "Scala",
+      "icon": "mdi:stairs"
+    },
+    "sensor.washer_state": {
+      "name": "Lavatrice",
+      "icon": "mdi:washing-machine",
+      "color": "blue",
+      "details": {
+        "in_progress": "Lavaggio",
+        "end": "sensor.washer_remaining"
+      }
+    },
+    "vacuum.robot": {
+      "name": "Robot",
+      "icon": "mdi:robot-vacuum",
+      "color": "green"
+    },
+    "lock.front_door": {
+      "name": "Casa",
+      "icon": "mdi:door-closed-lock"
+    },
+    "lock.studio_door": {
+      "name": "Studio",
+      "icon": "mdi:door-closed-lock"
+    },
+    "cover.garage_door": {
+      "name": "Garage",
+      "icon": "mdi:garage"
+    },
+    "button.gate_pedestrian": {
+      "name": "Pedonale",
+      "icon": "mdi:walk",
+      "action": "Sblocca",
+      "confirm": "Vuoi sbloccarlo?",
+      "verb": "sbloccare"
+    },
+    "button.gate_car": {
+      "name": "Carraio",
+      "icon": "mdi:gate",
+      "action": "Apri / Chiudi",
+      "confirm": "Vuoi aprirlo o chiuderlo?"
+    },
+    "binary_sensor.door_front": {
+      "name": "Porta ingresso"
+    },
+    "binary_sensor.window_living": {
+      "name": "Soggiorno"
+    },
+    "binary_sensor.window_kitchen": {
+      "name": "Cucina"
+    },
+    "binary_sensor.window_bedroom": {
+      "name": "Camera"
+    }
+  },
+  "alerts": {
+    "battery_below": 10,
+    "window_open_min": 10,
+    "night": [
+      "23:00",
+      "06:00"
+    ],
+    "backup_hours": 36,
+    "missed_call": {
+      "entity": "input_boolean.missed_call",
+      "hours": 12,
+      "photo": "assets/call-2.svg"
+    }
+  },
+  "vmc": {
+    "controls": {
+      "speed": "select.vmc_fan_speed",
+      "automatic": "switch.vmc_auto",
+      "balance": "select.vmc_balance",
+      "profile": "select.vmc_profile",
+      "boost": {
+        "15 min": "button.vmc_boost_15",
+        "30 min": "button.vmc_boost_30",
+        "1 ora": "button.vmc_boost_60"
+      },
+      "boost_stop": "button.vmc_boost_off",
+      "bypass": {
+        "auto": "button.vmc_bypass_auto",
+        "open": {
+          "1 h": "button.vmc_bypass_open_1h",
+          "12 h": "button.vmc_bypass_open_12h"
+        },
+        "closed": {
+          "1 h": "button.vmc_bypass_closed_1h",
+          "12 h": "button.vmc_bypass_closed_12h"
+        }
+      },
+      "power_supply": "switch.vmc_power"
+    },
+    "mode": "sensor.vmc_mode",
+    "level": "sensor.vmc_level",
+    "next_change": "sensor.vmc_next_change",
+    "supply_flow": "sensor.vmc_supply_flow",
+    "extract_flow": "sensor.vmc_extract_flow",
+    "power": "sensor.vmc_power",
+    "t_outdoor": "sensor.vmc_t_outdoor",
+    "t_supply": "sensor.vmc_t_supply",
+    "t_extract": "sensor.vmc_t_extract",
+    "t_exhaust": "sensor.vmc_t_exhaust",
+    "humidity_outdoor": "sensor.vmc_h_outdoor",
+    "humidity_supply": "sensor.vmc_h_supply",
+    "humidity_extract": "sensor.vmc_h_extract",
+    "humidity_exhaust": "sensor.vmc_h_exhaust",
+    "bypass": "sensor.vmc_bypass",
+    "bypass_mode": "sensor.vmc_bypass_mode",
+    "filter_days": "sensor.vmc_filter_days",
+    "rmot": "sensor.vmc_rmot",
+    "target_profile": "sensor.vmc_target_profile",
+    "errors": "sensor.vmc_errors",
+    "errors_raw": "sensor.vmc_errors_raw",
+    "error_reads": "sensor.vmc_error_reads",
+    "clock": "sensor.vmc_clock",
+    "clock_offset": "sensor.vmc_clock_offset",
+    "fault": "binary_sensor.vmc_fault",
+    "filter_change": "binary_sensor.vmc_filter_change",
+    "rpm_supply": "sensor.vmc_rpm_supply",
+    "rpm_extract": "sensor.vmc_rpm_extract",
+    "duty_supply": "sensor.vmc_duty_supply",
+    "duty_extract": "sensor.vmc_duty_extract",
+    "errors_verified": true,
+    "balance_return_min": 60
+  },
+  "robot": {
+    "name": "Robot",
+    "vacuum": "vacuum.robot",
+    "map": "image.robot_map",
+    "zone": {
+      "mm_per_px": 12.5
+    },
+    "mode": "select.robot_mode",
+    "mop": "select.robot_mop",
+    "battery": "sensor.robot_battery",
+    "state": "sensor.robot_state",
+    "room": "sensor.robot_room",
+    "progress": "sensor.robot_progress",
+    "last_clean": "sensor.robot_last_clean",
+    "last_start": "sensor.robot_last_start",
+    "clean_duration": "sensor.robot_clean_duration",
+    "clean_area": "sensor.robot_clean_area",
+    "error": "sensor.robot_error",
+    "dock_error": "sensor.robot_dock_error",
+    "drying": "sensor.robot_drying",
+    "dock": [
+      {
+        "entity": "switch.robot_dock_empty",
+        "name": "Svuota",
+        "sent": "Svuotamento inviato",
+        "states": [
+          "emptying_the_bin"
+        ],
+        "icon": "mdi:delete-empty-outline"
+      },
+      {
+        "entity": "switch.robot_dock_wash",
+        "name": "Lava mocio",
+        "sent": "Lavaggio del mocio inviato",
+        "states": [
+          "going_to_wash_the_mop",
+          "washing_the_mop"
+        ],
+        "icon": "mdi:water-sync"
+      },
+      {
+        "entity": "switch.robot_dock_dry",
+        "name": "Asciuga mocio",
+        "sent": "Asciugatura del mocio inviata",
+        "dry": true,
+        "icon": "mdi:hair-dryer-outline"
+      }
+    ],
+    "maintenance": [
+      {
+        "name": "Sensori",
+        "subject": "Sensori",
+        "verb": "pulire",
+        "entity": "sensor.robot_sensor_left",
+        "total": 30,
+        "reset": "button.robot_reset_sensor",
+        "icon": "mdi:radar"
+      },
+      {
+        "name": "Filtro",
+        "subject": "Filtro",
+        "verb": "pulire",
+        "entity": "sensor.robot_filter_left",
+        "total": 150,
+        "reset": "button.robot_reset_filter",
+        "icon": "mdi:air-filter"
+      },
+      {
+        "name": "Spazzola principale",
+        "subject": "Spazzola principale",
+        "verb": "sostituire",
+        "entity": "sensor.robot_main_brush_left",
+        "total": 300,
+        "reset": "button.robot_reset_main_brush",
+        "icon": "mdi:brush"
+      },
+      {
+        "name": "Spazzola laterale",
+        "subject": "Spazzola laterale",
+        "verb": "sostituire",
+        "entity": "sensor.robot_side_brush_left",
+        "total": 200,
+        "reset": "button.robot_reset_side_brush",
+        "icon": "mdi:broom"
+      },
+      {
+        "name": "Spazzola del dock",
+        "subject": "Spazzola del dock",
+        "verb": "pulire",
+        "entity": "sensor.robot_dock_brush_left",
+        "total": 300,
+        "reset": "button.robot_reset_dock_brush",
+        "icon": "mdi:brush-variant"
+      },
+      {
+        "name": "Filtro del dock",
+        "subject": "Filtro del dock",
+        "verb": "pulire",
+        "entity": "sensor.robot_dock_strainer_left",
+        "total": 150,
+        "reset": "button.robot_reset_dock_strainer",
+        "icon": "mdi:filter-outline"
+      }
+    ],
+    "dock_problems": [
+      {
+        "entity": "binary_sensor.robot_dock_clean_water",
+        "text": "Serbatoio acqua pulita da riempire"
+      },
+      {
+        "entity": "binary_sensor.robot_dock_dirty_water",
+        "text": "Serbatoio acqua sporca da svuotare"
+      },
+      {
+        "entity": "binary_sensor.robot_dock_cleaning_fluid",
+        "text": "Detergente da rabboccare"
+      }
+    ],
+    "schedules": {
+      "automation": "automation.robot_schedule",
+      "pause": "input_datetime.robot_pause",
+      "time": "13:15",
+      "plans": [
+        {
+          "days": [
+            1,
+            5
+          ],
+          "description": "Tutta la casa",
+          "short": "Tutto",
+          "mode": "Aspira",
+          "wash": false,
+          "details": "Bilanciata · Percorso standard"
+        },
+        {
+          "days": [
+            3,
+            6
+          ],
+          "description": "Tutta la casa",
+          "short": "Tutto",
+          "mode": "Aspira e lava",
+          "wash": true,
+          "details": "Bilanciata · Percorso standard · Acqua bassa"
+        },
+        {
+          "days": [
+            0,
+            2,
+            4
+          ],
+          "description": "Soggiorno e Cucina",
+          "short": "2 stanze",
+          "mode": "Aspira",
+          "wash": false,
+          "details": "Bilanciata · Percorso standard"
+        }
+      ]
+    }
+  },
+  "appliances": [
+    {
+      "id": "dishwasher",
+      "type": "dishwasher",
+      "name": "Lavastoviglie",
+      "state": "sensor.dishwasher_state",
+      "end": "sensor.dishwasher_end",
+      "progress": "sensor.dishwasher_progress",
+      "program": "sensor.dishwasher_program",
+      "remote_start": "binary_sensor.dishwasher_remote",
+      "door": "binary_sensor.dishwasher_door",
+      "power_supply": "switch.dishwasher_power",
+      "start": "button.dishwasher_start",
+      "stop": "button.dishwasher_stop",
+      "delay": "select.dishwasher_delay",
+      "water_forecast": "sensor.dishwasher_water",
+      "energy_forecast": "sensor.dishwasher_energy",
+      "options": [
+        {
+          "name": "Extra asciutto",
+          "entity": "switch.dishwasher_opt_extradry"
+        },
+        {
+          "name": "Igiene+",
+          "entity": "switch.dishwasher_opt_hygiene"
+        },
+        {
+          "name": "Mezzo carico",
+          "entity": "switch.dishwasher_opt_half"
+        },
+        {
+          "name": "Veloce",
+          "entity": "switch.dishwasher_opt_speed"
+        },
+        {
+          "name": "Silenzioso",
+          "entity": "switch.dishwasher_opt_silence"
+        }
+      ]
+    },
+    {
+      "id": "washer",
+      "type": "washer",
+      "name": "Lavatrice",
+      "state": "sensor.washer_state",
+      "end": "sensor.washer_remaining",
+      "duration": "sensor.washer_total",
+      "remote_start": "binary_sensor.washer_remote",
+      "power_supply": "switch.washer_power",
+      "operation": "select.washer_operation",
+      "cycles": "sensor.washer_cycles",
+      "energy_month": "sensor.washer_energy_month"
+    },
+    {
+      "id": "dryer",
+      "type": "dryer",
+      "name": "Asciugatrice",
+      "state": "sensor.dryer_state",
+      "end": "sensor.dryer_remaining",
+      "duration": "sensor.dryer_total",
+      "remote_start": "binary_sensor.dryer_remote",
+      "power_supply": "switch.dryer_power",
+      "operation": "select.dryer_operation"
+    }
+  ],
+  "intercom": {
+    "server": "http://demo.local:1984/",
+    "stream": "intercom",
+    "camera": "camera.intercom",
+    "call": "input_boolean.doorbell_calling",
+    "in_conversation": "input_boolean.intercom_talking",
+    "repeat_rings": "counter.intercom_repeat",
+    "calls": "pyscript.intercom_calls",
+    "do_not_disturb": "input_boolean.do_not_disturb",
+    "doors": [
+      "button.gate_pedestrian",
+      "button.gate_car"
+    ]
+  },
+  "music": {
+    "server": "http://127.0.0.1:5173"
+  },
+  "car": {
+    "name": "Auto elettrica",
+    "battery": "sensor.car_battery",
+    "range": "sensor.car_range",
+    "energy_left": "sensor.car_energy_left"
+  }
+}
